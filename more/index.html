@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no,minimal-ui">
+    <meta name="referrer" content="no-referrer">
+    <html lang="zh-CN">
+    <title>我这里真有片😋😋😋</title>
+    <style>
+        html, body {
+            height: 70%;
+            margin: 0;
+            display: flex;
+            justify-content: center ;
+            
+            bottom: 200px ;
+
+        }
+        .video-container {
+            width: 80vmin; /* 使用vmin单位以适应不同屏幕尺寸 */
+            height: 45vmin; /* 通常视频比例为16:9，可以根据需要调整 */
+            /* 移除多余的align-items和justify-content属性 */
+        }
+    </style>
+</head>
+<body>
+
+    <div id="mse" class="video-container"></div> <!-- 添加类名video-container -->
+    <script src="https://unpkg.byted-static.com/xgplayer/2.31.6/browser/index.js" charset="utf-8"></script>
+    <script>
+        let player = new Player({
+            "id": "mse",
+            "url": "https://bucket.mdnetwork.us.kg/outcn.mp4",
+            "playsinline": true,
+            "whitelist": [
+                ""
+            ],
+            "playbackRate": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10
+            ],
+            "danmu": {
+                "comments": [],
+                "area": {
+                    "start": 0,
+                    "end": 1
+                },
+                "closeDefaultBtn": true,
+                "defaultOff": false,
+                "panel": true
+            },
+            "width": null,
+            "height": null,
+            "download": true,
+            "pip": true,
+            "autoplay": true,
+            "fluid": false,
+            "poster": "https://bucket.mdnetwork.us.kg/b.jpg"
+        });
+        player.emit('resourceReady', [{"name":"英文","url":"https://bucket.mdnetwork.us.kg/out.mp4"},{"name":"原版无字幕","url":"https://fun.mdn.cooltec.icu/more/test.mp4"}]);
+        
+
+</script>
+<script>
+async function getSetuImageWithProxy() {
+    // CORS代理服务器URL
+    const proxyUrl = 'https://api.codetabs.com/v1/proxy/?quest=';
+    // 目标API端点
+    const targetUrl = 'https://www.loliapi.com/bg/?type=json';
+    // 构造完整的请求URL
+    const fullUrl = proxyUrl + encodeURIComponent(targetUrl);
+
+    try {
+        // 发送请求
+        const response = await fetch(fullUrl);
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        // 解析JSON响应
+        const data = await response.json();
+
+        // 检查数据结构并提取图片链接
+        if (data && data.url) {
+            const b = data.url; // 存储图片链接
+            console.log('Image URL:', b);
+            // 设置页面背景为变量b的值，并拉伸填充整个页面
+            document.body.style.background = `url(${b}) no-repeat center center / cover`;
+            
+
+        } else {
+            console.error('No valid image URL found in the response');
+        }
+    } catch (error) {
+        // 处理错误情况
+        console.error('Could not fetch image:', error);
+    }
+}
+
+// 调用函数
+getSetuImageWithProxy();
+
+
+
+
+
+
+
+
+
+</script>
+
+
+<style>
+    /* 其他样式保持不变 */
+
+    .giscus-container {
+            width: 100%; /* 评论窗口宽度占满整个屏幕 */
+            height: 35vh; /* 高度为视口高度的40% */
+            overflow-y: auto; /* 开启垂直滚动条 */
+            position: fixed; /* 固定位置 */
+            bottom: 0; /* 位于页面底部 */
+            left: 0; /* 左对齐 */
+            right: 0; /* 右对齐 */
+            background: #fff; /* 设置背景颜色，以便看到滚动条 */
+            border-top: 1px solid #ccc; /* 添加顶部边框，区分内容区域 */
+            padding: 10px; /* 添加内边距 */
+            box-sizing: border-box; /* 包含内边距和边框在内的总宽度和高度 */
+    }
+</style>
+
+
+<div class="giscus-container">
+
+<script src="https://giscus.app/client.js"
+        data-repo="nomdn/pinglun"
+        data-repo-id="R_kgDON2rlGg"
+        data-category="General"
+        data-category-id="DIC_kwDON2rlGs4CmzFW"
+        data-mapping="specific"
+        data-term="fun"
+        data-strict="0"
+        data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-input-position="bottom"
+        data-theme="preferred_color_scheme"
+        data-lang="zh-CN"
+        crossorigin="anonymous"
+        async>
+
+</script>
+</div>
+</body>
+</html>
